@@ -1,10 +1,23 @@
 
-//Ex 4: reimplement a random sequence numbers 
+//Ex4: create a maxN function such that it takes an array and returns its largest element.
 
-fun main(args: Array<String>)
+
+fun maxN(numbers: IntArray): Int
 {
-         // Print a random sequence of n real values in [0, 1)
-            val n = args[0].toInt()
-            for (i in 0 until n) println(Math.random())
+    var max = numbers[0] // Initialize max with the first element of the array
+    for (num in numbers)
+    {
+        if (num > max)
+        {
+            max = num // Update max if a larger element is found
         }
+    }
+    return max
+}
 
+fun main()
+{
+    val array = intArrayOf(10, 20, 5, 30, 15)
+    val largest = maxN(array)
+    println("The largest element in the array is: $largest")
+}
